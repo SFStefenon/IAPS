@@ -35,7 +35,6 @@ plt.tight_layout()
 plt.show()
 
 ###############################################################################
-
 import os, time, warnings, contextlib
 os.environ["NIXTLA_ID_AS_COL"] = "1"
 import logging
@@ -48,7 +47,7 @@ from sklearn.metrics import mean_absolute_error, mean_squared_log_error
 from neuralforecast import NeuralForecast
 from neuralforecast.models import MLP, TFT, RNN, DilatedRNN, NHITS, TCN, BiTCN, LSTM, NBEATS, NBEATSx, GRU, Informer, TiDE, PatchTST, FEDformer, DeepAR, TimesNet
 
-horizon, input_size, epochs, test_ratio, freq = 5, 100, 10, 0.2, "s"
+horizon, input_size, epochs, test_ratio, freq = 5, 100, 100, 0.2, "s"
 
 raw = pd.read_csv("miris_load.csv", parse_dates=["DateTime"])
 df = pd.DataFrame({"unique_id": "Series1", "ds": raw["DateTime"], "y": raw["Conso"].astype(float)})
