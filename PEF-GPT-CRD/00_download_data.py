@@ -8,10 +8,8 @@ output_dir.mkdir(exist_ok=True)
 for year in range(2025, 2027):
     for month in range(1, 13):
         filename = f"DADOS_HIDROLOGICOS_HO_{year}_{month:02d}.csv"
-        url = (
-            "https://ons-aws-prod-opendata.s3.amazonaws.com/"
-            f"dataset/dados_hidrologicos_ho/{filename}"
-        )
+        url = ("https://ons-aws-prod-opendata.s3.amazonaws.com/"
+            f"dataset/dados_hidrologicos_ho/{filename}")
 
         response = requests.get(url, timeout=60)
 
@@ -22,10 +20,8 @@ for year in range(2025, 2027):
             print(f"Not available: {filename} ({response.status_code})")
 
 # Download the Tucuruí dataset from GitHub
-url = (
-    "https://raw.githubusercontent.com/SFStefenon/"
-    "NaturalFlowforHydroelectricity/main/tucurui.csv"
-)
+url = ("https://raw.githubusercontent.com/SFStefenon/"
+    "NaturalFlowforHydroelectricity/main/tucurui.csv")
 
 response = requests.get(url, timeout=60)
 response.raise_for_status()
