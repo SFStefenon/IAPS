@@ -63,27 +63,58 @@ def metrics(y, p):
 
 def evaluate(model_class):
     name = model_class.__name__
-    model = model_class(input_size=input_size, h=horizon, max_steps=epochs, random_seed=0,
-                        enable_progress_bar=False, logger=False)
+
+    model = model_class(
+        input_size=input_size,
+        h=horizon,
+        max_steps=epochs,
+        random_seed=0,
+        enable_progress_bar=False,
+        logger=False)
+
     nf = NeuralForecast(models=[model], freq=freq)
 
-    with open(os.devnull, "w") as null, contextlib.redirect_stdout(null), contextlib.redirect_stderr(null):
+    with open(os.devnull, "w") as null, \
+         contextlib.redirect_stdout(null), \
+         contextlib.redirect_stderr(null):
+
         start = time.perf_counter()
         nf.fit(df=train, val_size=0)
-        train_time = time.perf_counter()-start
+        train_time = time.perf_counter() - start
 
-        history, window_metrics = train.copy(), []
+        history = train.copy()
+        all_actual = []
+        all_predictions = []
+        window_metrics = []
+
         start = time.perf_counter()
-        for i in range(0, len(test), horizon):
-            block = test.iloc[i:i+horizon]
-            pred = nf.predict(df=history).reset_index()[name].to_numpy(float)[:len(block)]
-            window_metrics.append(metrics(block["y"].to_numpy(float), pred))
-            history = pd.concat([history, block], ignore_index=True)
-        test_time = time.perf_counter()-start
 
-    values = np.array(window_metrics)
-    ddof = 1 if len(values) > 1 else 0
-    return values.mean(0), values.std(0, ddof=ddof), train_time, test_time
+        for i in range(0, len(test), horizon):
+            block = test.iloc[i:i + horizon]
+
+            forecast = nf.predict(df=history).reset_index()
+            pred = forecast[name].to_numpy(float)[:len(block)]
+            actual = block["y"].to_numpy(float)
+
+            all_actual.extend(actual)
+            all_predictions.extend(pred)
+            window_metrics.append(metrics(actual, pred))
+
+            # Make the observed test block available for the next forecast
+            history = pd.concat([history, block], ignore_index=True)
+
+        test_time = time.perf_counter() - start
+
+    # Metrics over every test observation
+    overall = np.array(metrics(
+        np.asarray(all_actual),
+        np.asarray(all_predictions)))
+
+    # Variation among rolling windows
+    window_values = np.asarray(window_metrics)
+    window_std = window_values.std(axis=0,
+        ddof=1 if len(window_values) > 1 else 0)
+    return overall, window_std, train_time, test_time
 
 models = [MLP, TFT, RNN, DilatedRNN, NHITS, TCN, BiTCN, LSTM, NBEATS, 
           GRU, Informer, TiDE, PatchTST, FEDformer, DeepAR, TimesNet]
