@@ -1,22 +1,23 @@
-# 🤖 IAAMSP – Inteligência Artificial e Aprendizado de Máquina Aplicados a Sistemas de Potência
+# IAAMSP – Artificial Intelligence and Machine Learning Applied to Power Systems
 
-Este repositório é dedicado ao estudo, desenvolvimento e aplicação de técnicas de inteligência artificial e aprendizado de máquina voltadas a problemas reais em sistemas elétricos de potência. O objetivo é disponibilizar métodos avançados que possam ser utilizados em tarefas como manutenção preditiva, detecção de falhas, previsão de carga, análise operacional e otimização de redes elétricas.
+This repository is dedicated to the study, development, and application of artificial intelligence and machine learning techniques to real-world problems in electrical power systems. Its objective is to provide advanced methods that can be used for tasks such as predictive maintenance, fault detection, load forecasting, operational analysis, and power grid optimization.
 
-O projeto serve como uma base prática e científica para a implementação de técnicas computacionais modernas no contexto de redes elétricas inteligentes, contribuindo para sistemas de energia mais eficientes, resilientes e confiáveis.
+The project serves as a practical and scientific foundation for implementing modern computational techniques in the context of smart grids, contributing to more efficient, resilient, and reliable energy systems.
 
-**Detalhes do repositório:**
-- **Status do projeto:** Ativo e Open Source.
-- **Visibilidade:** Público.
+**Repository details:**
 
-Este repositório constitui um ambiente colaborativo ideal para pesquisadores, engenheiros e desenvolvedores que atuam na interface entre inteligência artificial e sistemas de potência. O espaço é destinado ao compartilhamento de conhecimento, desenvolvimento de soluções inovadoras e avanço do estado da arte em aplicações inteligentes para os desafios das redes elétricas modernas.
+* **Project status:** Active and open source.
+* **Visibility:** Public.
 
-### 🚀 Execute no Google Colab (Exemplo de Previsão de Séries Temporais)
+This repository provides an ideal collaborative environment for researchers, engineers, and developers working at the intersection of artificial intelligence and power systems. It is intended for knowledge sharing, the development of innovative solutions, and advancing the state of the art in intelligent applications addressing the challenges of modern power grids.
 
-Clique abaixo para abrir o notebook diretamente no Google Colab:
+### 🚀 Run in Google Colab (Time-Series Forecasting Example)
+
+Click below to open the notebook directly in Google Colab:
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1v2ZZsoHw0oeCsX0rLPXKprFNMJi5MDVX?usp=sharing)
 
-Para relatórios use LaTeX em [Overleaf](https://www.overleaf.com/), como o exemplo para [IEEE Access](https://ieeeaccess.ieee.org/wp-content/uploads/2025/08/ACCESS_latex_template_20240429.zip).
+For reports, use LaTeX on [Overleaf](https://www.overleaf.com/), such as the [IEEE Access template](https://ieeeaccess.ieee.org/wp-content/uploads/2025/08/ACCESS_latex_template_20240429.zip).
 
 ---
 
@@ -24,11 +25,11 @@ Para relatórios use LaTeX em [Overleaf](https://www.overleaf.com/), como o exem
 
 ### 🎓 **Professor** 
 
-💻 Departamento de Engenharia Informática 
+💻 Department of Computer Engineering
 
-🏛️ Instituto Superior de Engenharia de Lisboa (ISEL)
+🏛️ Lisbon School of Engineering (ISEL)
 
-🏫 Instituto Politécnico de Lisboa (IPL)
+🏫 Polytechnic University of Lisbon
 
 ---
 
