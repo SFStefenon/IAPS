@@ -1,4 +1,4 @@
-# IAAMSP – Artificial Intelligence and Machine Learning Applied to Power Systems
+# IAPS – Artificial Intelligence Applied to Power Systems
 
 This repository is dedicated to the study, development, and application of artificial intelligence and machine learning techniques to real-world problems in electrical power systems. Its objective is to provide advanced methods that can be used for tasks such as predictive maintenance, fault detection, load forecasting, operational analysis, and power grid optimization.
 
