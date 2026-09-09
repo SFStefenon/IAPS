@@ -11,12 +11,6 @@ The project serves as a practical and scientific foundation for implementing mod
 
 This repository provides an ideal collaborative environment for researchers, engineers, and developers working at the intersection of artificial intelligence and power systems. It is intended for knowledge sharing, the development of innovative solutions, and advancing the state of the art in intelligent applications addressing the challenges of modern power grids.
 
-### 🚀 Run in Google Colab (Time-Series Forecasting Example)
-
-Click below to open the notebook directly in Google Colab:
-
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1v2ZZsoHw0oeCsX0rLPXKprFNMJi5MDVX?usp=sharing)
-
 For reports, use LaTeX on [Overleaf](https://www.overleaf.com/), such as the [IEEE Access template](https://ieeeaccess.ieee.org/wp-content/uploads/2025/08/ACCESS_latex_template_20240429.zip).
 
 ---
